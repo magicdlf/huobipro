@@ -160,7 +160,7 @@ var HUOBI_PRO = {
                 body['addr-tag'] = payment_id;
             } else {
                 console.log('huobi withdrawal', coin, 'no payment id provided, cancel withdrawal');
-                return resolve(null);
+                return Promise.resolve(null);
             }
         }
 
