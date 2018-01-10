@@ -1,6 +1,7 @@
 const rest = require('./crawler/rest');
 const ws = require('./crawler/ws');
 
+// 比较深度并打印差异
 function compare(book1, book2) {
     let diff = {};
     for (let item of book1) {
@@ -44,4 +45,7 @@ function check() {
     setTimeout(check, 100);
 }
 
+// rest和ws在引用后都会自行启动
+// 可以通过ws.OrderBook和rest.OrderBook获取当前的行情深度
+// 等待爬虫数据稳定(约3秒)后，开始比较两者的数据差异
 setTimeout(check, 3000);

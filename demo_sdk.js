@@ -1,5 +1,6 @@
 const hbsdk = require('./sdk/hbsdk');
 
+// 按注释的步骤逐步放开注释，运行程序，验证接口
 function run() {
     // 准备工作，填写config/default.json中的:
     // access_key & secretkey, www.huobi.com上申请
@@ -8,6 +9,7 @@ function run() {
 
     // 第一步，获取account_id
     hbsdk.get_account().then(console.log);
+    // 运行demo，看控制台的输出结果
     // 把get_account获取到的type=spot的id填写到:
     // default.json中的${account_id_pro}中去
 
