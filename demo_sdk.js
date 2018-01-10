@@ -4,10 +4,10 @@ const hbsdk = require('./sdk/hbsdk');
 function run() {
     // 准备工作，填写config/default.json中的:
     // access_key & secretkey, www.huobi.com上申请
-    // account_id 登陆后看自己的UID
+    // uid 登陆后看自己的UID
     // trade_password 可以先不填，提现时需要
 
-    // 第一步，获取account_id
+    // 第一步，获取account_id_pro
     hbsdk.get_account().then(console.log);
     // 运行demo，看控制台的输出结果
     // 把get_account获取到的type=spot的id填写到:
