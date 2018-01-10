@@ -19,6 +19,8 @@ function run() {
 
     // 第三步，交易
     // hbsdk.buy_limit('ltcusdt', 0.01, 0.1);
+    // 注意交易是有精度的，精度数据在以下接口中获取
+    // https://api.huobi.pro/v1/common/symbols
 
     // 第四步，检查订单
     // hbsdk.get_order(377378515).then(console.log);
