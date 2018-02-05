@@ -8,7 +8,6 @@ var default_post_headers = {
 }
 
 var agentOptions = {
-    keepAlive: true,
     maxSockets: 256,
 }
 
