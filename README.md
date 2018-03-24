@@ -24,6 +24,17 @@ node demo_sdk.js
 node demo_crawler.js
 ```
 
+## 服务器选址
+推荐选择(阿里云、亚马逊)东京的节点，开机后测速...
+```
+curl -vso /dev/null https://api.huobipro.com/market/depth\?symbol\=btcusdt\&type\=step1 -A "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0" --trace-time
+```
+响应时间通常应该<30ms
+
+## 注册推荐
+可以使用我的邀请码注册火币，感谢支持!
+https://www.huobipro.com/zh-cn/topic/invited/?invite_code=2z223
+
 ## 联系作者
 magicdlf (QQ:2797820732)
 最新demo代码:
