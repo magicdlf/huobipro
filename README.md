@@ -32,7 +32,7 @@ curl -vso /dev/null https://api.huobipro.com/market/depth\?symbol\=btcusdt\&type
 响应时间通常应该<30ms
 
 ## 注册推荐
-可以使用我的邀请码注册火币，感谢支持!
+可以使用我的邀请码注册火币，邀请人会收到一定比例的佣金返还。
 https://www.huobipro.com/zh-cn/topic/invited/?invite_code=2z223
 
 ## 联系作者
