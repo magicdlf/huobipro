@@ -35,6 +35,29 @@ curl -vso /dev/null https://api.huobipro.com/market/depth\?symbol\=btcusdt\&type
 可以使用我的邀请码注册火币，邀请人会收到一定比例的佣金返还。
 https://www.huobipro.com/zh-cn/topic/invited/?invite_code=2z223
 
+## Hosts
+```
+1.32.242.10 otc.huobipro.com
+1.32.242.10 otc-api.huobipro.com
+1.32.242.10 l10n-uc.huobi.cn
+1.32.242.10 api.growingio.com
+1.32.242.10 uc-cn.huobi.com  
+104.20.136.68 uc.huobi.pro
+104.20.137.68 content.huobi.pro
+54.65.137.35 www.huobi.com
+104.20.206.64 www.huobipro.com
+104.20.207.64 api.huobipro.com
+54.230.159.30 www.binance.com
+52.84.35.186 resource.binance.com
+13.112.58.91 stream2.binance.com
+52.84.35.183 stream3.binance.com
+104.16.174.181 www.bitfinex.com
+104.16.173.181 api.bitfinex.com
+52.17.4.242 www.bitmex.com
+52.222.238.28 static.bitmex.com
+178.62.14.205 sentry.bitmex.com
+```
+
 ## 联系作者
 magicdlf (QQ:2797820732)
 最新demo代码:
