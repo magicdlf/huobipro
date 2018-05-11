@@ -31,9 +31,10 @@ curl -vso /dev/null https://api.huobipro.com/market/depth\?symbol\=btcusdt\&type
 ```
 响应时间通常应该<30ms
 
-## 注册推荐
-可以使用我的邀请码注册火币，邀请人会收到一定比例的佣金返还。
-https://www.huobipro.com/zh-cn/topic/invited/?invite_code=2z223
+## 联系作者
+magicdlf (QQ:2797820732)
+最新demo代码:
+https://github.com/magicdlf/huobipro
 
 ## Hosts
 ```
@@ -58,7 +59,7 @@ https://www.huobipro.com/zh-cn/topic/invited/?invite_code=2z223
 178.62.14.205 sentry.bitmex.com
 ```
 
-## 联系作者
-magicdlf (QQ:2797820732)
-最新demo代码:
-https://github.com/magicdlf/huobipro
+## 注册推荐
+可以使用我的邀请码注册火币，邀请人会收到一定比例的佣金返还。(有效期限注册后的六个月内)
+https://www.huobipro.com/zh-cn/topic/invited/?invite_code=2z223
+

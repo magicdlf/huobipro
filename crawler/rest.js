@@ -2,7 +2,9 @@ const moment = require('moment');
 const http = require('../framework/httpClient');
 const Promise = require('bluebird');
 
-const BASE_URL = 'https://api.huobi.pro';
+// const BASE_URL = 'https://api.huobi.pro';
+// 此地址用于国内不翻墙调试
+const BASE_URL = 'https://api.huobi.br.com';
 
 var orderbook = {};
 

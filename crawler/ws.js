@@ -2,20 +2,22 @@ const moment = require('moment');
 const WebSocket = require('ws');
 const pako = require('pako');
 
-const WS_URL = 'wss://api.huobi.pro/ws';
-
+// const WS_URL = 'wss://api.huobi.pro/ws';
+// 此地址用于国内不翻墙调试
+const WS_URL = 'wss://api.huobi.br.com/ws';
 
 var orderbook = {};
 
 exports.OrderBook = orderbook;
 
 function handle(data) {
-    // console.log('received', data.ch, 'data.ts', data.ts, 'crawler.ts', moment().format('x'));
+    console.log('received', data.ch, 'data.ts', data.ts, 'crawler.ts', moment().format('x'));
     let symbol = data.ch.split('.')[1];
     let channel = data.ch.split('.')[2];
     switch (channel) {
         case 'depth':
             orderbook[symbol] = data.tick;
+            console.log(data.tick);
             break;
         case 'kline':
             console.log('kline', data.tick);
@@ -24,7 +26,7 @@ function handle(data) {
 }
 
 function subscribe(ws) {
-    var symbols = ['xrpbtc', 'bchusdt'];
+    var symbols = ['ethusdt'];
     // 订阅深度
     // 谨慎选择合并的深度，ws每次推送全量的深度数据，若未能及时处理容易引起消息堆积并且引发行情延时
     for (let symbol of symbols) {
@@ -34,12 +36,12 @@ function subscribe(ws) {
         }));
     }
     // 订阅K线
-    for (let symbol of symbols) {
-        ws.send(JSON.stringify({
-            "sub": `market.${symbol}.kline.1min`,
-            "id": `${symbol}`
-        }));
-    }
+    // for (let symbol of symbols) {
+    //     ws.send(JSON.stringify({
+    //         "sub": `market.${symbol}.kline.1min`,
+    //         "id": `${symbol}`
+    //     }));
+    // }
 }
 
 function init() {
