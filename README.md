@@ -24,6 +24,32 @@ node demo_sdk.js
 node demo_crawler.js
 ```
 
+## 火币新签名
+[官方链接](https://github.com/huobiapi/API_Docs/wiki/REST_authentication)
+参考官方文档生成证书，并配置好 public key 和生成新的 api key，private key格式要求是 [pk8](https://github.com/huobiapi/API-FAQ/wiki/Create_User_Keys#-%E7%94%9F%E6%88%90pk8%E6%96%87%E4%BB%B6-%E5%A6%82%E6%9E%9C%E6%98%AFjava-c%E5%BC%80%E5%8F%91%E7%A7%81%E9%92%A5%E5%BF%85%E9%A1%BB%E8%BD%AC%E6%8D%A2%E6%88%90%E8%BF%99%E4%B8%AA%E6%A0%BC%E5%BC%8F)。或者使用 script 目录下的keygen.sh 脚本。 把 pk8-privatekey.pem 文件内容放入 config 里面，换行符替换成 \n。
+
+比如
+
+```
+-----BEGIN PRIVATE KEY-----
+MIGEAgEAMBAGByqGSM49AgEGBSuBBAAKBG0wawIBAQQgeTbe0d1zTBAPa9Kbxw4/
+6JrZvcYJEbmkUGbTAksfea2hRANCAATU8PDAWkVcN09WyuUwhJ2QCGjElwViv0hM
+sOOn/K7Fs8wmmo6UPX9PRXJIhG6yQfyqgNFt7Ptu/wGaqKaKy/fr
+-----END PRIVATE KEY-----
+```
+
+```json
+{
+    "huobi": {
+...
+        "privatekey": "-----BEGIN PRIVATE KEY-----\nMIGEAgEAMBAGByqGSM49AgEGBSuBBAAKBG0wawIBAQQgeTbe0d1zTBAPa9Kbxw4/\n6JrZvcYJEbmkUGbTAksfea2hRANCAATU8PDAWkVcN09WyuUwhJ2QCGjElwViv0hM\nsOOn/K7Fs8wmmo6UPX9PRXJIhG6yQfyqgNFt7Ptu/wGaqKaKy/fr\n-----END PRIVATE KEY-----"
+    }
+}
+```
+
+
+
+
 ## 服务器选址
 推荐选择(阿里云、亚马逊)东京的节点，开机后测速...
 ```

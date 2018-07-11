@@ -4,6 +4,7 @@ var Promise = require('bluebird');
 var moment = require('moment');
 var HmacSHA256 = require('crypto-js/hmac-sha256')
 var http = require('../framework/httpClient');
+var jsrsasign = require("jsrsasign");
 
 const URL_HUOBI_PRO = 'api.huobipro.com';
 // const URL_HUOBI_PRO = 'api.huobi.pro'; //备用地址
@@ -31,10 +32,18 @@ function sign_sha(method, baseurl, path, data) {
     var meta = [method, baseurl, path, p].join('\n');
     // console.log(meta);
     var hash = HmacSHA256(meta, config.huobi.secretkey);
-    var Signature = encodeURIComponent(CryptoJS.enc.Base64.stringify(hash));
+    var osig = CryptoJS.enc.Base64.stringify(hash);
+    var Signature = encodeURIComponent(osig);
     // console.log(`Signature: ${Signature}`);
     p += `&Signature=${Signature}`;
     // console.log(p);
+    var private_key = jsrsasign.KEYUTIL.getKey(config.huobi.privatekey);
+    var sig = new jsrsasign.Signature({ "alg": 'SHA256withECDSA' , "prov": "cryptojs/jsrsa"}); 
+    sig.init(private_key);
+    var sigValueHex = sig.signString(osig);
+    var wordArray = CryptoJS.enc.Hex.parse(sigValueHex);
+    var ps = encodeURIComponent(CryptoJS.enc.Base64.stringify(wordArray));
+    p += `&PrivateSignature=${ps}`;
     return p;
 }
 
