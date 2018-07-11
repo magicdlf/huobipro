@@ -4,6 +4,7 @@
         "secretkey": "replace_me",
         "uid": "replace_me",
         "account_id_pro": "replace_me",
-        "trade_password": "replace_me"
+        "trade_password": "replace_me",
+        "privatekey": "replace_me"
     }
 }
